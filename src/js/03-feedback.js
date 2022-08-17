@@ -17,8 +17,7 @@ populateTextarea();
 
 function onTextareaInput(e) {
   formData[e.target.name] = e.target.value;
- const message = JSON.stringify(formData);
-  console.log(message);
+ const message = JSON.stringify(formData);  
   localStorage.setItem(STORAGE_KEY, message);
 };
 
@@ -39,8 +38,10 @@ function onFormSubmit(e) {
     return;
   };
 
+  console.log(formData);
+  formData = {};
   e.currentTarget.reset();  
-  localStorage.removeItem(STORAGE_KEY);  
+  localStorage.removeItem(STORAGE_KEY);
 };
 
 
